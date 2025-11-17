@@ -1,0 +1,30 @@
+<!-- File: random.html -->
+<!-- Author: Anna LaPrade (alaprade@bu.edu), 11/10/2025 -->
+<!-- Description: shows a random joke and random picture for the dadjokes app -->
+
+<!-- extends from base file -->
+{% extends "dadjokes/base.html" %}
+
+{% block content %}
+    <!-- card for jokes -->
+    <div class="card">
+        <!-- click joke to see details -->
+        <a href="{% url 'joke_detail' joke.pk %}">
+            <p>{{ joke.text }}</p>
+            <br>
+            <small>Contributed by: {{ joke.contributor }}</small>
+        </a>
+    </div>
+
+     <!-- card for pictures -->
+    <div class="card">
+        <!-- click picture to see details -->
+        <a href="{% url 'picture_detail' picture.pk %}">
+            <img src="{{ picture.image_url }}" alt="Dad Picture">
+            <br>
+            <small>Contributed by: {{ picture.contributor }}</small>
+        </a>
+    </div>
+
+
+{% endblock %}

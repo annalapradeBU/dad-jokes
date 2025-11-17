@@ -1,0 +1,21 @@
+<!-- File: joke_list.html -->
+<!-- Author: Anna LaPrade (alaprade@bu.edu), 11/10/2025 -->
+<!-- Description: shows all of the existing jokes for the dadjokes app -->
+
+<!-- extend from the base -->
+{% extends "dadjokes/base.html" %}
+
+{% block content %}
+<h2>All Jokes</h2>
+
+<!-- loop through all the jokes, format the cards -->
+{% for joke in jokes %}
+<div class="card">
+    <a href="{% url 'joke_detail' joke.pk %}">
+        <p style="text-align:center;">{{ joke.text }}</p>
+        <p style="text-align:center; font-style: italic;">— {{ joke.contributor }}</p>
+    </a>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+<!-- File: joke_detail.html -->
+<!-- Author: Anna LaPrade (alaprade@bu.edu), 11/10/2025 -->
+<!-- Description: shows details of a single joke for the dadjokes app -->
+
+<!-- extend from base content -->
+{% extends "dadjokes/base.html" %}
+
+{% block content %}
+<h2>Joke Detail</h2>
+
+<!-- format -->
+<div class="card">
+    <p style="text-align:center;">{{ joke.text }}</p>
+    <p style="text-align:center; font-style: italic;">Submitted By: {{ joke.contributor }}</p>
+</div>
+
+{% endblock %}

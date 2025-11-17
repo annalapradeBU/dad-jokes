@@ -1,0 +1,43 @@
+<!-- File: base.html -->
+<!-- Author: Anna LaPrade (alaprade@bu.edu), 11/10/2025 -->
+<!-- Description: Base HTML file for dadjokes app -->
+
+{% load static %}
+
+<html>
+    <head>
+        <title>Dad Jokes</title>
+        <link rel="stylesheet" href="{% static 'styles-dadjokes.css' %}">
+    </head>
+
+    <body>
+        <!-- top navigation -->
+        <header class="navbar">
+            <h1 class="logo">Dad Jokes</h1>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'jokes_list' %}">All Jokes</a></li>
+                    <li><a href="{% url 'pictures_list' %}">All Pictures</a></li>
+                    <li><a href="{% url 'random' %}">Random</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- page-specific content -->
+        <div class="content-wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <!-- bottom navigation -->
+        <nav class="bottom-nav">
+            <a href="{% url 'jokes_list' %}">All Jokes</a>
+            <a href="{% url 'pictures_list' %}">All Pictures</a>
+            <a href="{% url 'random' %}">Random</a>
+        </nav>
+
+    </body>
+</html>
+
+

@@ -1,0 +1,17 @@
+<!-- File: picture_detail.html -->
+<!-- Author: Anna LaPrade (alaprade@bu.edu), 11/10/2025 -->
+<!-- Description: shows details of a single picture for the dadjokes app -->
+
+<!-- extends from base file -->
+{% extends "dadjokes/base.html" %}
+
+{% block content %}
+<h2>Picture Detail</h2>
+
+<!-- formatting -->
+<div class="card">
+    <img src="{{ picture.image_url }}" alt="Funny Picture">
+    <p style="text-align:center; font-style: italic;">Submitted By: {{ picture.contributor }}</p>
+</div>
+
+{% endblock %}
